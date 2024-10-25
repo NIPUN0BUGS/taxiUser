@@ -1,0 +1,157 @@
+.outerbox1{
+  /* background-color: #ffd1e3; */
+  background-color: #124e66;
+}
+
+/* Center the table */
+.table-wrapper {
+  display: flex;
+  justify-content: center; /* Center the table horizontally */
+  margin: 20px auto; /* Optional: Add space above and below the table */
+}
+
+/* Container */
+.driver-list-container {
+  width: 100%;
+  max-width: 1000px; /* Restricts width on larger screens */
+  margin: 20px auto;
+  padding: 20px; /* Use uniform padding */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto; 
+}
+
+.driver-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white; 
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.driver-table th,
+.driver-table td {
+  padding: 8px 10px; /* Reduced padding for smaller column width */
+  text-align: left; /* Align text to the left for headers */
+  border-bottom: 1px solid #ddd;
+}
+
+.driver-table th {
+  background-color: #4caf50; /* Header background color */
+  color: white; /* Header text color */
+  font-weight: bold; /* Bold font for headers */
+}
+
+.driver-table td {
+  color: #555;
+  text-align: right; /* Align text of results to the right */
+  max-width: 350px; /* Set max-width for each cell */
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}
+
+.driver-table tbody tr:hover {
+  background-color: #f1f1f1; /* Row hover effect */
+}
+
+.phone-number {
+  color: #4caf50; /* Link color */
+  text-decoration: none;
+}
+
+.phone-number:hover {
+  text-decoration: underline;
+}
+
+/* No Drivers Message */
+.no-drivers {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #888;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  .driver-table th {
+    display: none; /* Hide header on smaller screens */
+  }
+
+  .driver-table td {
+    padding: 10px;
+    font-size: 14px; /* Smaller font size for mobile */
+    display: block; /* Stack elements on smaller screens */
+    width: 100%; /* Full width for mobile */
+  }
+
+  .driver-table tr {
+    margin-bottom: 10px; /* Add space between rows */
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid #ddd; /* Add border to rows for clarity */
+    background-color: #fff; /* Row background color */
+  }
+
+  .driver-table td {
+    border-bottom: 1px solid #ddd; /* Keep the bottom border */
+    position: relative;
+    text-align: right;
+  }
+
+  .driver-table td::before {
+    content: attr(data-label); /* Use data-label for mobile */
+    position: absolute;
+    left: 10px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #4caf50; /* Color for labels */
+    font-size: 12px; /* Size for labels */
+  }
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  justify-content: center; /* This will center the button horizontally */
+  align-items: center; /* This centers the button vertically if needed */
+  margin-top: 20px; /* Optional: add space above the button */
+}
+
+.find-drivers-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.find-drivers-btn:hover {
+  background-color: #45a049;
+}
+
+.find-drivers-btn:active {
+  background-color: #3e8e41;
+  background-color: #8e3e3e;
+}
+
+
+
