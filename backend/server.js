@@ -10,9 +10,15 @@ const PORT = process.env.PORT || 8085;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:5174', // Frontend origin
+    origin: '*', // Allow requests from any origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
+
+// app.use(cors({
+//     origin: 'http://localhost:5173', // Frontend origin
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+// }));
+
 
 // Serve static files from the "uploads" folder
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -60,22 +66,47 @@ app.post('/uploadProfileImage', upload.single('profileImage'), (req, res) => {
     });
 });
 
-// Route to get drivers based on location
+
+// Route to get drivers based on location, including Blob image
 app.get('/drivers', (req, res) => {
     const location = req.query.location;
     if (!location) {
         return res.status(400).json({ error: 'Location parameter is required' });
     }
 
-    // Update to the correct column name
-    db.query('SELECT * FROM drivers WHERE driverLocation = ?', [location], (err, results) => {
+    // Fetch drivers including image as Blob
+    db.query('SELECT id, driverName, driverAvailability, driverPhone, vehicleColor, vehicleLicencePlate, driverLocation, image FROM drivers WHERE driverLocation = ?', [location], (err, results) => {
         if (err) {
             console.error('Error fetching drivers from the database:', err);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
-        res.json(results);
+        
+        // Convert Blob image to Base64
+        const driversWithImage = results.map(driver => ({
+            ...driver,
+            profileImage: driver.image ? `data:image/jpeg;base64,${driver.image.toString('base64')}` : null
+        }));
+
+        res.json(driversWithImage);
     });
 });
+
+// // Route to get drivers based on location
+// app.get('/drivers', (req, res) => {
+//     const location = req.query.location;
+//     if (!location) {
+//         return res.status(400).json({ error: 'Location parameter is required' });
+//     }
+
+//     // Update to the correct column name
+//     db.query('SELECT * FROM drivers WHERE driverLocation = ?', [location], (err, results) => {
+//         if (err) {
+//             console.error('Error fetching drivers from the database:', err);
+//             return res.status(500).json({ error: 'Internal Server Error' });
+//         }
+//         res.json(results);
+//     });
+// });
 
 
 app.listen(PORT, () => {

@@ -51,11 +51,10 @@ const ViewAvailableList = ({ drivers, language }) => {
                 <Stack direction="row" spacing={2} alignItems="center">
                   <Avatar
                     alt="Driver Profile"
-                    src={driver.profileImage 
-                      ? `http://localhost:8085/uploads/${driver.profileImage}` 
-                      : 'https://via.placeholder.com/100'}
+                    src={driver.profileImage || 'https://via.placeholder.com/100'}
                     sx={{ width: 60, height: 60, mr: 2 }}
                   />
+
                   <Typography
                     variant="h6"
                     onClick={() => handleDriverClick(driver.id)}
@@ -107,7 +106,7 @@ const ViewAvailableList = ({ drivers, language }) => {
                   }}
                   onClick={() => callDriver(driver.driverPhone)}
                 >
-                  <PhoneIcon sx={{ marginRight: '5px' }} /> 
+                  <PhoneIcon sx={{ marginRight: '5px' }} />
                   {language === 'en' ? 'Call Driver' : 'රියදුරා අමතන්න'}
                 </Button>
               </CardActions>
