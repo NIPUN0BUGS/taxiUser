@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 # CTAXI - Taxi Booking App
@@ -94,7 +93,3 @@ This project is licensed under the MIT License.
 ---
 
 This example README provides a clear overview of your project, its features, and how to set it up. You can modify the details as necessary to better match your specific implementation.
-=======
-![image](https://github.com/user-attachments/assets/52b42238-9b9a-44b0-b694-fc72fe75bab3)
-
->>>>>>> 8ff5422a4637162e3a94b68ba6a946ae6e5e40a9
