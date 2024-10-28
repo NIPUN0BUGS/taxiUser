@@ -13,7 +13,7 @@
 /* Container */
 .driver-list-container {
   width: 100%;
-  max-width: 1000px;  /* Restricts width on larger screens */
+  max-width: 1000px; /* Restricts width on larger screens */
   margin: 20px auto;
   padding: 20px; /* Use uniform padding */
   background-color: #f9f9f9;
