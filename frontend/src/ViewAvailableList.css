@@ -1,7 +1,17 @@
-.outerbox1{
-  /* background-color: #ffd1e3; */
-  background-color: #124e66;
+html, body, #root, .App {
+  height: 100%; /* Ensure the entire app takes full viewport height */
+  overflow: hidden; /* Prevent double scrolling on the page */
 }
+
+
+.outerbox1 {
+  background-color: #124e66;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 100vh; /* Restrict container height to viewport height */
+}
+
 
 /* Center the table */
 .table-wrapper {

@@ -50,9 +50,14 @@ const LocationForm = () => {
 
   return (
     <div style={{
-      padding: '20px', textAlign: 'center',
-      backgroundColor: '#e8f5e9', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+      padding: '20px',
+      textAlign: 'center',
+      backgroundColor: '#e8f5e9',
+      borderRadius: '12px',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+      maxHeight: '80vh'   // Set a maximum height for better control
     }}>
+    
       <Typography variant="h4" gutterBottom sx={{ color: '#3c3c3c' }}>
         {language === 'en' ? 'Select Your Pickup Location' : 'ඔබේ ස්ථානය තෝරන්න'}
       </Typography>

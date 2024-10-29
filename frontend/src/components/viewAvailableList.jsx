@@ -24,7 +24,12 @@ const ViewAvailableList = ({ drivers, language }) => {
   });
 
   return (
-    <Container className='outerbox1' sx={{ padding: '20px', bgcolor: '#F5EFFF', borderRadius: '10px' }}>
+    <Container className='outerbox1'
+    sx={{
+      padding: '20px',
+      bgcolor: '#F5EFFF',
+      borderRadius: '10px',
+    }}>
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', color: 'RED' }}>
         {language === 'en' ? 'Drivers Status' : 'ලබාගත හැකි රියදුරන්'}
       </Typography>
